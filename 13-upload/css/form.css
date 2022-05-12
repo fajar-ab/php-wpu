@@ -1,0 +1,67 @@
+@import url(variabel.css);
+
+h2 + a {
+    text-decoration: none;
+}
+
+form {
+    width: 350px;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: aliceblue;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 10px;
+}
+
+form:hover {
+    box-shadow: 0 0 10px rgba(172, 172, 172, 0.781);
+}
+
+form input[type='text'] {
+    padding: 8px 10px;
+    font-size: 13px;
+    color: rgb(138, 138, 138);
+    background-color: aliceblue;
+    border: 1px solid rgb(212, 211, 211);
+    border-radius: 3px;
+}
+
+form input[type='text']:focus {
+    outline: none;
+    border: 1px solid blueviolet;
+}
+
+form input[type='file'] {
+    color: rgb(95, 95, 95);
+    background-color: aliceblue;
+    border: 1px solid rgb(212, 211, 211);
+    border-radius: 3px;
+}
+
+form input[type='file']::file-selector-button {
+    display: inline-block;
+    padding: 8px;
+    border: none;
+    background-color: blueviolet;
+    color: white;
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 10px;
+    background-color: aliceblue;
+    border: 1px solid rgb(212, 211, 211);
+    border-radius: 3px;
+    font-size: 13px;
+    color: rgb(95, 95, 95);
+}
+
+form button:hover {
+    cursor: pointer;
+    border: 1px solid blueviolet;
+}
+
+img {
+    width: 10px;
+}

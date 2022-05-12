@@ -1,0 +1,53 @@
+@import url(variabel.css);
+
+
+h2 {
+    text-align: center;
+}
+
+form {
+    width: 250px;
+    margin: auto;
+    padding: 10px 20px;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+}
+
+form:hover {
+    box-shadow: 0 0 10px rgba(172, 172, 172, 0.781);
+}
+
+form label {
+    margin: 10px 0 5px;
+}
+
+form input {
+    padding: 7px 10px;
+    font-size: 13px;
+    color: rgb(138, 138, 138);
+    background-color: aliceblue;
+    border: 1px solid rgb(212, 211, 211);
+    border-radius: 3px;
+}
+
+form input:focus {
+    outline: none;
+    border: 1px solid blueviolet;
+}
+
+form button {
+    margin: 20px 0;
+    padding: 8px 10px;
+    background-color: aliceblue;
+    border: 1px solid rgb(212, 211, 211);
+    border-radius: 3px;
+    font-size: 13px;
+    color: rgb(95, 95, 95);
+}
+
+form button:hover {
+    cursor: pointer;
+    border: 1px solid blueviolet;
+    background-color: rgb(229, 217, 240);
+}
