@@ -1,7 +1,7 @@
 <?php
 
 // koneksi ke database
-$conn = mysqli_connect("localhost", "root", "", "belajar_php_wpu");
+$conn = mysqli_connect("localhost", "root", "", "tutorial_php_wpu");
 
 
 function query(string $sql): array

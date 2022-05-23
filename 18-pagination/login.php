@@ -70,7 +70,7 @@ if (isset($_POST['login'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="css/registrasi.css?v=1">
+    <link rel="stylesheet" href="css/registrasi.css?v=2">
     <style>
         .pesan {
             color: red;
@@ -98,10 +98,13 @@ if (isset($_POST['login'])) {
         <label for="remember">
             <input type="checkbox" name="remember" id="remember"> Remember Me
         </label>
-
+        
         <button type="submit" name="login">Login</button>
+        
+        <a href="registrasi.php">Registrasi</a>
     </form>
 
+<script src="js/script.js"></script>
 </body>
 
 </html>

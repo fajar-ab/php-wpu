@@ -36,8 +36,9 @@ form input:focus {
     border: 1px solid blueviolet;
 }
 
-form button {
-    margin: 20px 0;
+form button,
+form a {
+    margin: 5px 0;
     padding: 8px 10px;
     background-color: aliceblue;
     border: 1px solid blueviolet;
@@ -50,4 +51,11 @@ form button:hover {
     cursor: pointer;
     border: 1px solid blueviolet;
     background-color: rgb(229, 217, 240);
+}
+
+form a {
+    text-align: center;
+    text-decoration: none;
+    background-color: blueviolet;
+    color: white;
 }
