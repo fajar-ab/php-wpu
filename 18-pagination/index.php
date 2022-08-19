@@ -1,84 +1,42 @@
-<?php
-session_start();
-
-if (!$_SESSION['login']) {
-    header("Location: login.php");
-    exit;
-}
-
-
-require_once "function.php";
-
-$mahasiswa = query("SELECT * FROM mahasiswa");
-
-if (isset($_POST['cari'])) {
-    $mahasiswa = cari($_POST['keyword']);
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tampil</title>
-    <link rel="stylesheet" href="css/table.css?">
-    <link rel="stylesheet" href="css/cari.css?">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="asset/mdb/mdb.min.css">
+  <link rel="stylesheet" href="asset/ohSnap/ohsnap.css">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <title>CRUD OOP</title>
 </head>
 
 <body>
+  <div id="ohsnap"></div>
+  <div class="container py-5">
 
-    <a href="logout.php" class="logout">Logout</a>
+    <?php
 
-    <h2>Daftar Mahasiswa</h2>
+    @$halaman = $_GET['halaman'];
 
-    <a href="tambah.php">tambah mahasiswa baru</a>
+    switch ($halaman) {
+      case 'tambah':
+        require_once __DIR__ . '/view/tambah.php';
+        break;
+      case 'ubah':
+        require_once __DIR__ . '/view/ubah.php';
+        break;
+      default:
+        require_once __DIR__ . '/view/tampil.php';
+    }
 
-    <form action="" method="POST">
-        <input type="text" name="keyword" autocomplete="off" autofocus placeholder="ketikkan keyword">
-        <button type="submit" name="cari">Cari</button>
-    </form>
+    ?>
 
-    <table>
-        <thead>
-            <tr>
-                <th>No</th>
-                <th>Aksi</th>
-                <th>Gambar</th>
-                <th>NRP</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Jurusan</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            $no = 1;
-            foreach ($mahasiswa as $mhs) : ?>
-                <tr>
-                    <td><?= $no; ?></td>
-                    <td>
-                        <a href="ubah.php?id=<?= $mhs['id'] ?>">ubah</a> |
-                        <a href="hapus.php?id=<?= $mhs['id'] ?>" id="hapus">hapus</a>
-                    </td>
-                    <td class="foto">
-                        <img src="img/<?= $mhs['gambar'] ?>" alt="foto">
-                    </td>
-                    <td><?= $mhs['nrp']; ?></td>
-                    <td><?= $mhs['nama']; ?></td>
-                    <td><?= $mhs['email']; ?></td>
-                    <td><?= $mhs['jurusan'] ?></td>
-                </tr>
-            <?php
-                $no++;
-            endforeach; ?>
-        </tbody>
-    </table>
-
-<script src="js/script.js"></script>
+  </div>
+  <script src="asset/mdb/mdb.min.js"></script>
+  <script src="asset/jquery/jquery-3.6.0.min.js"></script>
+  <script src="asset/ohSnap/ohsnap.min.js"></script>
 </body>
 
 </html>
